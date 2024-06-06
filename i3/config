@@ -45,6 +45,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 && $refresh_i3status # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 && $refresh_i3status # decrease screen brightness
 
+# print screen key
+bindsym Print exec gnome-screenshot -i
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
