@@ -18,5 +18,5 @@ configuration{
   sidebar-mode: true;
 }
 
-@theme "catppuccin-latte"
+@theme "catppuccin-frappe"
 
