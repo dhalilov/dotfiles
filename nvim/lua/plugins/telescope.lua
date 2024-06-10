@@ -32,11 +32,19 @@ return {
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')
 
-    local builtin = require("telescope.builtin") 
+    local builtin = require("telescope.builtin")
+    local utils = require("telescope.utils")
 
     -- Fuzzy find based on filename
     vim.keymap.set('n', '<C-p>', function()
       builtin.find_files(require('telescope.themes').get_dropdown({}))
+    end, {})
+
+    -- Fuzzy find in current directory
+    vim.keymap.set('n', '<leader>sd', function ()
+      builtin.find_files {
+	cwd = utils.buffer_dir()
+      }
     end, {})
 
     -- Fuzzy find based on text content
