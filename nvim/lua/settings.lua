@@ -40,9 +40,13 @@ vim.opt.updatetime = 250
 vim.opt.scrolloff = 10
 
 --[[
-  Tabs
+  Whitespace
 --]]
 
 -- Width of tabs
 vim.opt.shiftwidth = 2
+
+-- Show trailing whitespace and non-breakable spaces
+vim.opt.list = true
+vim.opt.listchars = { trail = '·', nbsp = '␣' }
 
