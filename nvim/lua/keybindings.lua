@@ -27,7 +27,7 @@ vim.keymap.set("i", "<C-s>", "<Esc>:w<Enter>")
 vim.keymap.set("n", "<C-s>", ":w<Enter>")
 
 -- Yank to clipboard
-vim.keymap.set("n", "<Leader>y", "\"+y")
+vim.keymap.set({"n", "v"}, "<Leader>y", "\"+y")
 
 -- Paste from clipboard
-vim.keymap.set("n", "<Leader>p", "\"+p")
+vim.keymap.set({"n", "v"}, "<Leader>p", "\"+p")
