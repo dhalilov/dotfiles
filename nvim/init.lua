@@ -10,7 +10,7 @@ local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
   vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
-end 
+end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
@@ -27,5 +27,13 @@ require("lazy").setup({
   },
 
   -- Import all plugins from the plugins directory
-  { import = 'plugins' }
+  { import = 'plugins' },
+
+  -- Coq plugin,
+  {
+    "whonore/Coqtail",
+    config = function()
+      vim.g.coqtail_noimap = 1
+    end
+  }
 })
