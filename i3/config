@@ -256,3 +256,5 @@ exec_always feh --bg-scale /usr/share/desktop-base/emerald-theme/wallpaper/conte
 # Set screen saver to 15 minutes (900 seconds) timeout
 exec xset s 900
 
+# Disable power saving features
+exec xset -dpms
