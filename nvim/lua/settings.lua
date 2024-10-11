@@ -9,44 +9,49 @@ vim.g.maplocalleader = " "
 -- Enable Nerd Font
 vim.g.have_nerd_font = true
 
--- Line numbers
+-- [[ Options ]]
+
+-- Show line numbers and enable relative line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
 
--- Disable mode 
+-- Hide current mode 
 vim.opt.showmode = false
 
--- Enable break indent
+-- Number of lines to keep above and below cursor
+vim.opt.scrolloff = 10
+
+-- Decrease update time on swap file (crash recovery)
+vim.opt.updatetime = 250
+
+-- [[ Indentation and whitespace ]]
+
+-- Tab size
+vim.opt.tabstop = 2
+
+-- Number of spaces per indent level
+vim.opt.shiftwidth = 2
+
+-- Enable smart indentation for C-like structures
+vim.opt.cindent = true
+
+-- Continue visual indentation on line wrap
 vim.opt.breakindent = true
+
+-- Show trailing whitespace and non-breakable spaces
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
+-- [[ Searching and substitutions ]]
 
 -- Smart case-insensitive search (unless uppercase is entered)
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
--- Live substitutions
+-- Live substitutions in a preview buffer
 vim.opt.inccommand = 'split'
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-
--- Set signcolumn 
-vim.opt.signcolumn = 'yes'
-
--- Decrease update time on swap file
-vim.opt.updatetime = 250
-
--- Number of lines to keep above and below cursor
-vim.opt.scrolloff = 10
-
---[[
-  Whitespace
---]]
-
--- Width of tabs
-vim.opt.shiftwidth = 2
-
--- Show trailing whitespace and non-breakable spaces
-vim.opt.list = true
-vim.opt.listchars = { trail = '·', nbsp = '␣' }
 
