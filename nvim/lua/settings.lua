@@ -40,7 +40,7 @@ vim.opt.breakindent = true
 
 -- Show trailing whitespace and non-breakable spaces
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = '▏ ', leadmultispace = '▏ ', trail = '·', nbsp = '␣' }
 
 -- [[ Searching and substitutions ]]
 
