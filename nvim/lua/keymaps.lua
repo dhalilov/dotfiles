@@ -22,9 +22,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
 
--- Alt-Backspace for deleting word
--- vim.keymap.set("i", "<C-BS>", "<Esc>caw")
-
 -- Save file
 vim.keymap.set("i", "<C-s>", "<Esc>:w<Enter>")
 vim.keymap.set("n", "<C-s>", ":w<Enter>")
