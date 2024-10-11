@@ -5,6 +5,9 @@
 -- Open explorer
 vim.keymap.set("n", "<Leader>pv", "<cmd>:Ex<CR>")
 
+-- Exit terminal mode more easily
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
+
 -- Change current window
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
