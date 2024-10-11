@@ -28,12 +28,4 @@ require("lazy").setup({
 
   -- Import all plugins from the plugins directory
   { import = 'plugins' },
-
-  -- Coq plugin,
-  {
-    "whonore/Coqtail",
-    config = function()
-      vim.g.coqtail_noimap = 1
-    end
-  }
 })
