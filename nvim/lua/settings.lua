@@ -21,6 +21,9 @@ vim.opt.showmode = false
 -- Number of lines to keep above and below cursor
 vim.opt.scrolloff = 10
 
+-- Always show signcolumn to avoid displacements
+vim.opt.signcolumn = "yes"
+
 -- Decrease update time on swap file (crash recovery)
 vim.opt.updatetime = 250
 
