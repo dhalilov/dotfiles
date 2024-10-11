@@ -1,5 +1,5 @@
 --
--- Keybindings
+-- Keymaps
 --
 
 -- Open explorer

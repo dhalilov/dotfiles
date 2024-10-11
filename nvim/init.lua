@@ -3,7 +3,7 @@
 --
 
 require("settings")
-require("keybindings")
+require("keymaps")
 
 -- [[ Set up Lazy package manager ]]
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
