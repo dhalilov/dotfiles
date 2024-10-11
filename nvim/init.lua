@@ -4,6 +4,7 @@
 
 require("settings")
 require("keymaps")
+require("autocommands")
 
 -- [[ Set up Lazy package manager ]]
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
