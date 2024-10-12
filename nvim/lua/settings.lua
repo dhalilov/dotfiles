@@ -27,6 +27,10 @@ vim.opt.signcolumn = "yes"
 -- Highlight current cursor line
 vim.opt.cursorline = true
 
+-- Open window split on right/below
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
 -- Decrease update time on swap file (crash recovery)
 vim.opt.updatetime = 250
 
