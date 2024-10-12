@@ -42,7 +42,7 @@ vim.opt.tabstop = 2
 -- Number of spaces per indent level
 vim.opt.shiftwidth = 2
 
--- Enable smart indentation for C-like structures
+-- Enable smart indentation for C-like code
 vim.opt.cindent = true
 
 -- Continue visual indentation on line wrap
