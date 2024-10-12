@@ -45,6 +45,7 @@ return {
 		-- If inside a Git project, lists only tracked Git files and respects the .gitignore
 		vim.keymap.set('n', '<C-p>', function ()
 			local cwd = vim.fn.getcwd()
+			local opts = { cwd = cwd }
 
 			-- Check if the current directory is a Git project
 			if is_inside_work_tree[cwd] == nil then
@@ -53,9 +54,9 @@ return {
 			end
 
 			if is_inside_work_tree[cwd] then
-				builtin.git_files()
+				builtin.git_files(opts)
 			else
-				builtin.find_files()
+				builtin.find_files(opts)
 			end
 		end, {})
 
