@@ -38,27 +38,8 @@ return {
 
 		local builtin = require("telescope.builtin")
 
-		-- Cache the result of "git rev-parse"
-		local is_inside_work_tree = {}
-
 		-- Fuzzy find based on filename
-		-- If inside a Git project, lists only tracked Git files and respects the .gitignore
-		vim.keymap.set('n', '<C-p>', function ()
-			local cwd = vim.fn.getcwd()
-			local opts = { cwd = cwd }
-
-			-- Check if the current directory is a Git project
-			if is_inside_work_tree[cwd] == nil then
-				vim.fn.system("git rev-parse --is_inside_work_tree")
-				is_inside_work_tree[cwd] = vim.v.shell_error == 0
-			end
-
-			if is_inside_work_tree[cwd] then
-				builtin.git_files(opts)
-			else
-				builtin.find_files(opts)
-			end
-		end, {})
+		vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 
 		-- Fuzzy find based on text content
 		vim.keymap.set('n', '<leader>sg', builtin.live_grep, {})
