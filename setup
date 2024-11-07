@@ -1,7 +1,9 @@
 #!/bin/bash
 
+SCRIPT_DIR=$(dirname "$0")
+
 # Create symlinks in .config
-for dir in $(ls -d */ | xargs basename -a); do
+for dir in $(ls -d $SCRIPT_DIR/*/ | xargs basename -a); do
 	if [ -e ~/.config/$dir/ ]; then
 		read -p "Directory ~/.config/$dir already exists. Do you want to replace it? (Y/n) " -n 1 -r
 		echo
