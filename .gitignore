@@ -1,8 +1,1 @@
-# Ignore everything except specified directories
-/*
-
 nvim/lazy-lock.json
-
-!nvim
-!i3
-!rofi
