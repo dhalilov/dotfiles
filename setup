@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Create symlinks in .config
+for dir in $(ls -d */ | xargs basename -a); do
+	if [ -e ~/.config/$dir/ ]; then
+		read -p "Directory ~/.config/$dir already exists. Do you want to replace it? (Y/n) " -n 1 -r
+		echo
+		if [[ $REPLY =~ ^[Yy]$ ]]; then
+			# If directory is a symlink, do not delete its content, but remove the symlink
+			if [ -L ~/.config/$dir ]; then
+				rm ~/.config/$dir
+			else
+				rm -rf ~/.config/$dir/
+			fi
+			ln -s -r $dir ~/.config
+		fi
+	else
+		ln -s -r $dir ~/.config
+	fi
+done
