@@ -1,16 +1,26 @@
--- Treesitter plugin
+-- Treesitter is an incremental parsing library. It allows fast and correct
+-- syntax highlighting, as opposed to traditional regex-based highlighters, as
+-- well as simple goto-definitions and incremental selection.
 return {
-  "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate",
-  config = function ()
-    local configs = require("nvim-treesitter.configs")
+	"nvim-treesitter/nvim-treesitter",
+	build = ":TSUpdate",
+	main = "nvim-treesitter.configs",
+	opts = {
+		ensure_installed = { "lua", "bash", "c", "scala" },
+		sync_install = false,
+		auto_install = true,
 
-    configs.setup({
-      ensure_installed = { "c", "lua", "scala" },
-      sync_install = false,
-      auto_install = true,
-      highlight = { enable = true },
-      indent = { enable = true },
-    })
-  end
+		-- Enable syntax highlighting and indentation
+		highlight = { enable = true },
+		indent = { enable = true },
+
+		-- Enable incremental selection
+		incremental_selection = {
+			enable = true,
+			keymaps = {
+				node_incremental = "+",
+				node_decremental = "-",
+			}
+		}
+	}
 }

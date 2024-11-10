@@ -1,8 +1,5 @@
---
--- A collection of autocommands
---
+-- An autocommand to highlight yanked (copied) text
 
--- Highlight text when yanking text
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
   group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),

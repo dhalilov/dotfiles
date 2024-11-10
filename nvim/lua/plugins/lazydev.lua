@@ -1,15 +1,15 @@
--- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
--- used for completion, annotations and signatures of Neovim apis
+-- lazydev.nvim is a plugin that configures LuaLS support for editing
+-- Neovim configuration files.
 return {
-	'folke/lazydev.nvim',
-	ft = 'lua',
-	dependencies = {
-		{ 'Bilal2453/luvit-meta', lazy = true }
+	{
+		"folke/lazydev.nvim",
+		ft = "lua", -- only load on lua files
+		opts = {
+			library = {
+				-- Load luvit types when the `vim.uv` word is found
+				{ path = "luvit-meta/library", words = { "vim%.uv" } },
+			},
+		},
 	},
-	opts = {
-		library = {
-			-- Load luvit types when the `vim.uv` word is found
-			{ path = 'luvit-meta/library', words = { 'vim%.uv' } }
-		}
-	}
+	{ "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
 }
