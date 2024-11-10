@@ -23,7 +23,7 @@ vim.opt.breakindent = true
 
 -- Show indent lines, trailing whitespace and non-breakable spaces
 vim.opt.list = true
-vim.opt.listchars = { tab = '▏ ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = "▏ ", trail = '·', nbsp = '␣' }
 
 -- [[ Formatting ]]
 
@@ -34,4 +34,4 @@ vim.opt.colorcolumn = {80}
 vim.opt.textwidth = 80
 
 -- Automatically wrap inserted comments
-vim.opt.formatoptions:append { "a" }
+vim.opt.formatoptions:append { 'a' }
