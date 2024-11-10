@@ -27,7 +27,7 @@ return {
 			group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
 			callback = function (event)
 				-- Setup LSP keymaps
-				require("keymaps.lsp").setup(event.buf)
+				require("keymaps.LSP").setup(event.buf)
 
 				-- Enable LSP highlight autocommand if possible
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
