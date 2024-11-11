@@ -37,6 +37,9 @@ function M.setup(buf)
 	-- Execute code action
 	map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
 
+	-- Run code lens
+	map("<leader>cl", vim.lsp.codelens.run, "Run [C]ode [L]ens")
+
 	-- Hover documentation
 	map("K", vim.lsp.buf.hover, "Hover documentation")
 
