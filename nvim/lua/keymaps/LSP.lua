@@ -43,8 +43,17 @@ function M.setup(buf)
 	-- Hover documentation
 	map("K", vim.lsp.buf.hover, "Hover documentation")
 
+	-- Signature help
+	map("<C-h>", vim.lsp.buf.signature_help, "Signature [h]elp", "i")
+
 	-- Goto declaration
 	map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+
+	-- Goto next diagnostic
+	map("[d", vim.diagnostic.goto_next, "Goto next [d]iagnostic")
+
+	-- Goto previous diagnostic
+	map("]d", vim.diagnostic.goto_prev, "Goto previous [d]iagnostic")
 end
 
 return M
