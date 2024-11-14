@@ -17,7 +17,7 @@ return {
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 
 		-- Status updates
-		{ "j-hui/fidget.nvim", opts = {} },
+		{ "j-hui/fidget.nvim",       opts = {} },
 
 		-- Allows extra capabilities provided by nvim-cmp
 		"hrsh7th/cmp-nvim-lsp",
@@ -25,7 +25,7 @@ return {
 	config = function()
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
-			callback = function (event)
+			callback = function(event)
 				-- Setup LSP keymaps
 				require("keymaps.LSP").setup(event.buf)
 
@@ -52,6 +52,13 @@ return {
 						completion = {
 							callSnippet = "Replace"
 						}
+					}
+				}
+			},
+			rust_analyzer = {
+				settings = {
+					['rust-analyzer'] = {
+						check = { command = "clippy" },
 					}
 				}
 			}
