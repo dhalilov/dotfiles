@@ -44,7 +44,7 @@ function M.setup(buf)
 	map("K", vim.lsp.buf.hover, "Hover documentation")
 
 	-- Signature help
-	map("<C-h>", vim.lsp.buf.signature_help, "Signature [h]elp", "i")
+	map("<C-k>", vim.lsp.buf.signature_help, "Signature [h]elp", "i")
 
 	-- Goto declaration
 	map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
