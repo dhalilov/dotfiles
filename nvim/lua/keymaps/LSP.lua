@@ -48,12 +48,6 @@ function M.setup(buf)
 
 	-- Goto declaration
 	map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-
-	-- Goto next diagnostic
-	map("[d", vim.diagnostic.goto_next, "Goto next [d]iagnostic")
-
-	-- Goto previous diagnostic
-	map("]d", vim.diagnostic.goto_prev, "Goto previous [d]iagnostic")
 end
 
 return M
