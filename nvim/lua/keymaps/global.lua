@@ -1,13 +1,13 @@
 -- Global NeoVim keymaps
 
 -- Save file in insert/normal mode
-vim.keymap.set({"i", "n"}, "<C-s>", "<cmd>w<Return>", { desc = "Save file" })
+vim.keymap.set({ "i", "n" }, "<C-s>", "<cmd>w<Return>", { desc = "Save file" })
 
 -- Yank to clipboard
-vim.keymap.set({"n", "v"}, "<Leader>y", "\"+y")
+vim.keymap.set({ "n", "v" }, "<Leader>y", "\"+y")
 
 -- Paste from clipboard
-vim.keymap.set({"n", "v"}, "<Leader>p", "\"+p")
+vim.keymap.set({ "n", "v" }, "<Leader>p", "\"+p")
 vim.keymap.set({ "n", "v" }, "<Leader>P", "\"+P")
 
 -- Recenter after up/down motions
