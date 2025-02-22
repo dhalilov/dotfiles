@@ -8,6 +8,7 @@ vim.keymap.set({"n", "v"}, "<Leader>y", "\"+y")
 
 -- Paste from clipboard
 vim.keymap.set({"n", "v"}, "<Leader>p", "\"+p")
+vim.keymap.set({ "n", "v" }, "<Leader>P", "\"+P")
 
 -- Recenter after up/down motions
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
