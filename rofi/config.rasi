@@ -1,9 +1,5 @@
-* {
-  font: "Fira Code";
-}
-
-configuration{
-  modi: "run,drun,window";
+configuration {
+  modi: "drun";
   icon-theme: "Oranchelo";
   show-icons: true;
   terminal: "i3-sensible-terminal";
@@ -11,12 +7,7 @@ configuration{
   location: 0;
   disable-history: false;
   hide-scrollbar: true;
-  display-drun: "   Apps ";
-  display-run: "   Run ";
-  display-window: " 﩯  Window";
-  display-Network: " 󰤨  Network";
-  sidebar-mode: true;
+  display-drun: " ";
 }
 
-@theme "catppuccin-frappe"
-
+@theme "rounded-dark"
