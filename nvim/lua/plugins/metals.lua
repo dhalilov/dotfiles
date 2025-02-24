@@ -6,10 +6,33 @@ return {
 	"scalameta/nvim-metals",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		{ "j-hui/fidget.nvim", opts = {} }
+		{ "j-hui/fidget.nvim", opts = {} },
+		{
+			"mfussenegger/nvim-dap",
+			config = function()
+				require("dap").configurations.scala = {
+					{
+						type = "scala",
+						request = "launch",
+						name = "RunOrTest",
+						metals = {
+							runType = "runOrTestFile",
+						},
+					},
+					{
+						type = "scala",
+						request = "launch",
+						name = "Test Target",
+						metals = {
+							runType = "testTarget",
+						},
+					},
+				}
+			end
+		},
 	},
 	ft = { "scala", "sbt", "java" },
-	opts = function ()
+	opts = function()
 		local metals_config = require("metals").bare_config()
 
 		-- Metals settings
@@ -29,6 +52,9 @@ return {
 			-- Setup LSP keymaps and autocommands
 			require("keymaps.LSP").setup(buf)
 			require("autocommands.highlight-lsp").setup(buf)
+
+			-- Setup DAP keymaps
+			require("keymaps.DAP").setup(buf)
 		end
 
 		return metals_config
